@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière | Fine Jewelry & Luxury Gifts</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #81D8D0; /* Tiffany-inspired blue */
+            --secondary-color: #333333;
+            --light-gray: #f8f8f8;
+            --white: #ffffff;
+            --black: #000000;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+        }
+        
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+        }
+        
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 0;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        
+        .top-bar {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 8px 0;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        
+        .top-bar a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+        
+        .navbar {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            letter-spacing: 3px;
+            color: var(--black);
+        }
+        
+        .navbar-nav .nav-link {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 15px;
+            color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            font-size: 20px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .hero {
+            background-color: var(--light-gray);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6BC5BD;
+            border-color: #6BC5BD;
+        }
+        
+        .btn-outline-light {
+            padding: 10px 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            height: 400px;
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            padding: 30px 20px;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+        
+        .product-card {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--white);
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .about-section {
+            background-color: var(--light-gray);
+        }
+        
+        .about-content h2 {
+            margin-bottom: 25px;
+            font-size: 2.3rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+        }
+        
+        .newsletter-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .newsletter-content h2 {
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-content p {
+            margin-bottom: 30px;
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+        
+        .footer h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #444;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #ccc;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 767px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        Free shipping on all orders over $150 | Complimentary gift wrapping
+    </div>
+    
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-start">
+                    <a href="#" class="me-3"><i class="bi bi-geo-alt-fill me-1"></i> Find a Boutique</a>
+                    <a href="#"><i class="bi bi-telephone-fill me-1"></i> Contact Us</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="me-3"><i class="bi bi-person-fill me-1"></i> Sign In</a>
+                    <a href="#"><i class="bi bi-pencil-square me-1"></i> Create Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="#">LUMIÈRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Jewelry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Engagement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Watches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gifts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Story</a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-flex">
+                    <a href="#" class="nav-link"><i class="bi bi-search"></i></a>
+                    <a href="#" class="nav-link"><i class="bi bi-heart"></i></a>
+                    <a href="#" class="nav-link"><i class="bi bi-bag"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero" style="background-image: url('/api/placeholder/1920/1080');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Timeless Elegance, Extraordinary Craftsmanship</h1>
+                <p class="mb-4">Discover our exquisite collection of fine jewelry crafted with the highest quality materials and unparalleled attention to detail.</p>
+                <a href="#" class="btn btn-primary me-2 mb-2 mb-md-0">Shop New Arrivals</a>
+                <a href="#" class="btn btn-outline-light mb-2 mb-md-0">Explore Collections</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="category-card">
+                        <img src="https://media.tiffany.com/is/image/tiffanydm/2024_HOLIDAY_HP_SBC_Rings-1?$tile$&&fmt=webp" alt="Rings">
+                        <div class="category-overlay">
+                            <h3>Rings</h3>
+                            <a href="#" class="btn btn-outline-light mt-2">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="category-card">
+                        <img src="https://media.tiffany.com/is/image/tiffanydm/2025_VDAY_HP_SBC_Necklaces?$tile$&&fmt=webp" alt="Necklaces">
+                        <div class="category-overlay">
+                            <h3>Necklaces</h3>
+                            <a href="#" class="btn btn-outline-light mt-2">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="category-card">
+                        <img src="https://media.tiffany.com/is/image/tiffanydm/2025_VDAY_HP_SBC_Earrings?$tile$&&fmt=webp" alt="Earrings">
+                        <div class="category-overlay">
+                            <h3>Earrings</h3>
+                            <a href="#" class="btn btn-outline-light mt-2">Shop Now</a>
+                        </div>
